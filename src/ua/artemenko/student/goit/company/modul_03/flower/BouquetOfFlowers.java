@@ -13,7 +13,7 @@ public class BouquetOfFlowers {
     }
 
     public void removeFlowersInBouquet(String nameFlower) {
-        if(bouquetOfFlowers.size() != 0){
+        if(fullBouquet()){
             for(Flower helpFile:bouquetOfFlowers){
                 if(nameFlower.equals(helpFile.getName())){
                     bouquetOfFlowers.remove(helpFile);
@@ -42,5 +42,30 @@ public class BouquetOfFlowers {
         return bouquetOfFlowers;
     }
 
+    public List<Flower> getAllFlowersWithName(String nameFlower) {
+        List<Flower> listReturnFlower = new ArrayList<>();
+        if(fullBouquet()){
+            for(Flower helpFile:bouquetOfFlowers){
+                if(nameFlower.equals(helpFile.getName())){
+                    listReturnFlower.add(helpFile);
+                }
+            }
+        }
+        else{
+            System.out.println("Букет не собран");
+
+        }
+
+        return listReturnFlower;
+    }
+
+    public boolean fullBouquet(){
+        if(bouquetOfFlowers.size() != 0) {
+            return true;
+        }
+            else {
+                return false;
+            }
+    }
 
 }

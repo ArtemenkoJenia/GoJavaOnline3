@@ -1,5 +1,7 @@
 package ua.artemenko.student.goit.company.modul_03.flower;
 
+import java.util.List;
+
 /**
  * Created by Женя on 30.05.2016.
  */
@@ -26,6 +28,19 @@ public class Main {
         for (Flower flower:bouquet.getBouquetOfFlowers()){
             System.out.printf("%s %s %s%n",flower.getName(),flower.getColor(),flower.getSize().toString());
         }
+
+        System.out.println();
+
+        List<Flower> listFlower = bouquet.getAllFlowersWithName("Aster");
+        if(listFlower.size() != 0)
+        {
+            for (int i = 0; i < listFlower.size(); i++) {
+                System.out.printf("%s %s %s%n",listFlower.get(i).getName(),listFlower.get(i).getColor(),listFlower.get(i).getSize().toString());
+            }
+        }
+
+
+        System.out.println();
 
         RoseBush roseBush = new RoseBush(5,"Red",SizeFlower.Medium);
 
