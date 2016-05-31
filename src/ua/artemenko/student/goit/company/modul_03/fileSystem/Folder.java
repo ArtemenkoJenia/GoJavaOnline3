@@ -10,28 +10,19 @@ public class Folder {
         listFile = new ArrayList<>();
     }
 
-    public MyFile getFile(String name) {
-        MyFile file = new MyFile();
-        if(listFile.size() != 0){
-            for(MyFile helpFile:listFile){
-                if(name.equals(helpFile.getName())){
-                    file = helpFile;
-                    break;
-                }
-            }
-        }
-        return file;
-    }
-
     public void setFile(MyFile file) {
         this.listFile.add(file);
     }
 
-    public MyFile removeFile(int index) {
-        MyFile file = listFile.get(index);
-        return file;
+    public void setAllFile(MyFile... file) {
+        for (MyFile help:file){
+            setFile(help);
+        }
     }
 
+    public void removeFile(MyFile file) {
+        listFile.remove(file);
+    }
 
 
 }

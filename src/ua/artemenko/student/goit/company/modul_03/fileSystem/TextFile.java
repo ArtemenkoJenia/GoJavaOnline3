@@ -5,6 +5,10 @@ public class TextFile extends MyFile {
 
     private String text;
 
+    public TextFile(String nameTextFile){
+        super(nameTextFile);
+    }
+
     public String getText() {
         return text;
     }

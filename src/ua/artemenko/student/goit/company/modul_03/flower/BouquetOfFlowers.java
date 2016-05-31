@@ -12,10 +12,10 @@ public class BouquetOfFlowers {
         bouquetOfFlowers = new ArrayList<>();
     }
 
-    public void removeFlowersInBouquet(String nameFlower) {
+    public void removeFlowersInBouquet(String name) {
         if(fullBouquet()){
             for(Flower helpFile:bouquetOfFlowers){
-                if(nameFlower.equals(helpFile.getName())){
+                if(name.equals(helpFile.nameFlower)){
                     bouquetOfFlowers.remove(helpFile);
                     return;
                 }
@@ -42,11 +42,11 @@ public class BouquetOfFlowers {
         return bouquetOfFlowers;
     }
 
-    public List<Flower> getAllFlowersWithName(String nameFlower) {
+    public List<Flower> getAllFlowersWithName(String name) {
         List<Flower> listReturnFlower = new ArrayList<>();
         if(fullBouquet()){
             for(Flower helpFile:bouquetOfFlowers){
-                if(nameFlower.equals(helpFile.getName())){
+                if(name.equals(helpFile.nameFlower)){
                     listReturnFlower.add(helpFile);
                 }
             }

@@ -3,7 +3,16 @@ package ua.artemenko.student.goit.company.modul_03.fileSystem;
 
 public class ImageFile extends MyFile {
 
-    public void show() {
+    public ImageFile(String nameImageFile){
+        super(nameImageFile);
+    }
 
+    public void showImage() {
+        System.out.println("Picture open");
+    }
+
+
+    public void closeImage() {
+        System.out.println("Picture open");
     }
 }

@@ -4,38 +4,38 @@ package ua.artemenko.student.goit.company.modul_03.flower;
 public class Flower {
 
 
-    private String name;
-    private String color;
-    private SizeFlower size;
+    protected String nameFlower;
+    protected String colorFlower;
+    protected SizeFlower sizeFlower;
 
     public Flower(String name,String color,SizeFlower size){
-        this.name = name;
-        this.color = color;
-        this.size = size;
+        this.nameFlower = name;
+        this.colorFlower = color;
+        this.sizeFlower = size;
     }
 
-    public SizeFlower getSize() {
-        return size;
+    public SizeFlower getSizeFlower() {
+        return sizeFlower;
     }
 
-    public void setSize(SizeFlower size) {
-        this.size = size;
+    public void setSizeFlower(SizeFlower sizeFlower) {
+        this.sizeFlower = sizeFlower;
     }
 
-    public String getColor() {
-        return color;
+    public String getColorFlower() {
+        return colorFlower;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setColorFlower(String colorFlower) {
+        this.colorFlower = colorFlower;
     }
 
-    public String getName() {
-        return name;
+    public String getNameFlower() {
+        return nameFlower;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameFlower(String nameFlower) {
+        this.nameFlower = nameFlower;
     }
 
 
