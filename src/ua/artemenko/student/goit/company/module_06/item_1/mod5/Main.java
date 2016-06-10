@@ -3,11 +3,12 @@ package ua.artemenko.student.goit.company.module_06.item_1.mod5;
 
 public class Main {
     public static void main(String[] args) {
-        int sizeArray = 0;
+        int sizeArray = 10;
         try {
             ArrayClass arrayClass = new ArrayClass(sizeArray);
-            ArrayClass.showArray(arrayClass.array);
             ArrayClass.searchMinMax(arrayClass.array);
+            ArrayClass.showArray(arrayClass.array);
+            System.out.println();
 
             int[] helpArray0 = arrayClass.array.clone();
             ArrayClass.bubbleSort(helpArray0);

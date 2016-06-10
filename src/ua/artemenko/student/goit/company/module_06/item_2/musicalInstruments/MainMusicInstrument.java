@@ -29,13 +29,14 @@ public class MainMusicInstrument {
         System.out.println();
 
         Map<String,Integer> order = new HashMap<>();
-        order.put("Guiter",10);
+        order.put("Guiter",-10);
         order.put("Trumpet",5);
         order.put("Piano",5);
         order.put("Violin",10);
 
         System.out.println("Получен заказ");
-        System.out.println();
+
+        show(order);
 
         System.out.println("Заказ проверяется");
         System.out.println();
@@ -43,11 +44,8 @@ public class MainMusicInstrument {
         musicStore.orderChecks(order);
 
         System.out.println("Заказ проверен и откоректирован");
-        //System.out.println();
 
-        System.out.println("Guiter " + order.get("Guiter"));
-        System.out.println("Trumpet " + order.get("Trumpet"));
-        System.out.println("Piano " + order.get("Piano"));
+        show(order);
 
         System.out.println();
 
@@ -56,5 +54,13 @@ public class MainMusicInstrument {
         System.out.println("Guiter " + musicStore.catalog.get("Guiter").size());
         System.out.println("Trumpet " + musicStore.catalog.get("Trumpet").size());
         System.out.println("Piano " + musicStore.catalog.get("Piano").size());
+    }
+    private static void show(Map<String,Integer> order) {
+        System.out.println();
+        Set<Map.Entry<String, Integer>> setHelp = order.entrySet();
+        for (Map.Entry<String, Integer> setHelpIter : setHelp) {
+            System.out.println(setHelpIter.getKey() + " " + setHelpIter.getValue());
+        }
+        System.out.println();
     }
 }

@@ -13,9 +13,9 @@ public class MainCalculation {
     public static void main(String[] args) {
         LineSegment lineSegment = new LineSegment(new Point(3.0, 5.4), new Point(14.7, 1.4));
         Triangle triangle = new Triangle(new Point(3.0, 5.4), new Point(14.7, 1.4), new Point(8.3, 7.2));
-        Circle circle = new Circle(5.4);
+        Circle circle = new Circle(-5.4);
 
-        Rectangle rectangle = new Rectangle(5, 9);
+        Rectangle rectangle = new Rectangle(-5, 9);
 
         List<GeometricFigure> geometricFigure = new ArrayList<>();
         geometricFigure.add(circle);

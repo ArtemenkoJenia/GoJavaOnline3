@@ -87,10 +87,11 @@ public class MusicStore {
                 try {
                     if (setHelpIter.getKey().equals(setHelpCatalogIter.getKey())) {
                         if (setHelpIter.getValue() > setHelpCatalogIter.getValue().size()) {
-                            throw new IncorrectValueException();
+                            throw new IncorrectValueException("Не коректное значение.");
                         }
                     }
                 } catch (IncorrectValueException e) {
+                    System.out.println(e.getMessage());
                     System.out.println("В наличии на складе " + setHelpCatalogIter.getValue().size() + " " + setHelpCatalogIter.getKey());
                     setHelpIter.setValue(setHelpCatalogIter.getValue().size());
                 }
@@ -121,6 +122,7 @@ public class MusicStore {
     private void nameInstrumentChecks(Map<String, Integer> order) {
         Set<Map.Entry<String, Integer>> setHelp = order.entrySet();
         Set<Map.Entry<String, List<MusicalInstrument>>> setHelpCatalog = catalog.entrySet();
+        List<String> str = new ArrayList<>();
 
         for (Map.Entry<String, Integer> setHelpIter : setHelp) {
             try {
@@ -135,8 +137,11 @@ public class MusicStore {
                 }
             } catch (NoSuchProductExcepsion e) {
                 System.out.println(e.getMessage());
-                setHelp.remove(setHelpIter.getKey());
+                str.add(setHelpIter.getKey());
             }
+        }
+        for (String strHelp:str) {
+            order.remove(strHelp);
         }
     }
 }

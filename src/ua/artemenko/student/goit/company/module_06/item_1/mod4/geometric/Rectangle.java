@@ -1,18 +1,16 @@
 package ua.artemenko.student.goit.company.module_06.item_1.mod4.geometric;
 
 
-import ua.artemenko.student.goit.company.module_06.packageExcepcion.IncorrectValueException;
-
-import java.util.Scanner;
 
 public class Rectangle implements GeometricFigure {
 
     private double width;
     private double height;
+    private String comment = "RECTANGLE";
 
     public Rectangle(double width, double height) {
-        this.width = corectProbe(width);
-        this.height = corectProbe(height);
+        this.width = CorrectionClass.correction(width,comment);
+        this.height = CorrectionClass.correction(height,comment);
     }
 
     @Override
@@ -42,29 +40,30 @@ public class Rectangle implements GeometricFigure {
         this.height = height;
     }
 
-    private double corectProbe(double hDouble) {
-        try {
-            if (hDouble <= 0) {
-                throw new IncorrectValueException();
-            }
-
-        } catch (IncorrectValueException e) {
-            System.out.println("Введите новое значение стороны прямоугольника.Она должена быть положительным числом.");
-            boolean flag = false;
-            while (!flag) {
-                Scanner scanner = new Scanner(System.in);
-                String helpImput = scanner.next();
-                try {
-                    double newDouble = Double.parseDouble(helpImput);
-                    System.out.println("Новое значение введено");
-                    flag = true;
-                    return newDouble;
-
-                } catch (NumberFormatException n) {
-                    System.out.println("Вы ввели не коректное значение . Попробуйте ещё раз");
-                }
-            }
-        }
-        return hDouble;
-    }
+//    private double corectProbe(double hDouble,String str) {
+//        try {
+//            if (hDouble <= 0) {
+//                throw new IncorrectValueException("Не коректное значение");
+//            }
+//
+//        } catch (IncorrectValueException e) {
+//            System.out.println(e.getMessage());
+//            System.out.println(str);
+//            boolean flag = false;
+//            while (!flag) {
+//                Scanner scanner = new Scanner(System.in);
+//                String helpImput = scanner.next();
+//                try {
+//                    double newDouble = Double.parseDouble(helpImput);
+//                    System.out.println("Новое значение введено");
+//                    flag = true;
+//                    return newDouble;
+//
+//                } catch (NumberFormatException n) {
+//                    System.out.println("Вы ввели не коректное значение . Попробуйте ещё раз");
+//                }
+//            }
+//        }
+//        return hDouble;
+//    }
 }
