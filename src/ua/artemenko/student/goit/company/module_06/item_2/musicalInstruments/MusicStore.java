@@ -70,7 +70,27 @@ public class MusicStore {
         numberChecksAndCorrection(order);
     }
 
+    private void nameInstrumentChecks(Map<String, Integer> order) {
+        Set<Map.Entry<String, Integer>> setHelp = order.entrySet();
+        List<String> str = new ArrayList<>();
+        for (Map.Entry<String, Integer> setHelpIter : setHelp) {
+            try {
+                if (!catalog.containsKey(setHelpIter.getKey())) {
+                    throw new NoSuchProductExcepsion("Извените " + setHelpIter.getKey() + " нет в каталоге магазина");
+                    }
+            }catch (NoSuchProductExcepsion e){
+                System.out.println(e.getMessage());
+                str.add(setHelpIter.getKey());
+            }
+        }
+        for (String strHelp : str) {
+            order.remove(strHelp);
+        }
+
+    }
+
     private void numberChecksAndCorrection(Map<String, Integer> order) {
+
         Set<Map.Entry<String, Integer>> setHelp = order.entrySet();
         Set<Map.Entry<String, List<MusicalInstrument>>> setHelpCatalog = catalog.entrySet();
 
@@ -101,47 +121,23 @@ public class MusicStore {
 
     private int correction(Integer result) {
 
-            System.out.println("Наверное вы ошиблись.Колличество единиц товара не может быть отрицательным.Введите новое значение.");
-            boolean flag = false;
-            while (!flag) {
-                Scanner scanner = new Scanner(System.in);
-                String helpImput = scanner.next();
-                try {
-                    int newDouble = Integer.parseInt(helpImput);
-                    System.out.println("Новое значение введено");
-                    flag = true;
-                    return newDouble;
+        System.out.println("Наверное вы ошиблись.Колличество единиц товара не может быть отрицательным.Введите новое значение.");
+        boolean flag = false;
+        while (!flag) {
+            Scanner scanner = new Scanner(System.in);
+            String helpImput = scanner.next();
+            try {
+                int newDouble = Integer.parseInt(helpImput);
+                System.out.println("Новое значение введено");
+                flag = true;
+                return newDouble;
 
-                } catch (NumberFormatException n) {
-                    System.out.println("Вы ввели не коректное значение . Попробуйте ещё раз");
-                }
+            } catch (NumberFormatException n) {
+                System.out.println("Вы ввели не коректное значение . Попробуйте ещё раз");
             }
+        }
         return result;
     }
-
-    private void nameInstrumentChecks(Map<String, Integer> order) {
-        Set<Map.Entry<String, Integer>> setHelp = order.entrySet();
-        Set<Map.Entry<String, List<MusicalInstrument>>> setHelpCatalog = catalog.entrySet();
-        List<String> str = new ArrayList<>();
-
-        for (Map.Entry<String, Integer> setHelpIter : setHelp) {
-            try {
-                int countChecks = 0;
-                for (Map.Entry<String, List<MusicalInstrument>> setHelpCatalogIter : setHelpCatalog) {
-                    if (setHelpIter.getKey().equals(setHelpCatalogIter.getKey())) {
-                        countChecks++;
-                    }
-                }
-                if (countChecks == 0) {
-                    throw new NoSuchProductExcepsion("Извените " + setHelpIter.getKey() + " нет в каталоге магазина");
-                }
-            } catch (NoSuchProductExcepsion e) {
-                System.out.println(e.getMessage());
-                str.add(setHelpIter.getKey());
-            }
-        }
-        for (String strHelp:str) {
-            order.remove(strHelp);
-        }
-    }
 }
+
+
