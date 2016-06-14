@@ -1,7 +1,9 @@
 package ua.artemenko.student.goit.company.module_03.musicalInstruments;
 
 
-public class MusicalInstrument {
+import ua.artemenko.student.goit.company.module_03.interfacePac.AuxiliaryInterface;
+
+public class MusicalInstrument implements AuxiliaryInterface {
 
     protected String nameMusicalInstrument;
     protected double valueMusicalInstrument;
@@ -28,6 +30,12 @@ public class MusicalInstrument {
     }
 
     public void SoundInstrument(){
+    }
+
+    @Override
+    public String toString()
+    {
+        return this.nameMusicalInstrument + "  " + this.valueMusicalInstrument;
     }
 
 }

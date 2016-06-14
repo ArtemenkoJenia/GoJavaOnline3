@@ -1,7 +1,9 @@
 package ua.artemenko.student.goit.company.module_03.flower;
 
 
-public class Flower {
+import ua.artemenko.student.goit.company.module_03.interfacePac.AuxiliaryInterface;
+
+public class Flower implements AuxiliaryInterface {
 
 
     protected String nameFlower;
@@ -38,8 +40,9 @@ public class Flower {
         this.nameFlower = nameFlower;
     }
 
-
-}
-enum SizeFlower{
-    Small, Medium, Large
+    @Override
+    public String toString()
+    {
+        return this.nameFlower + "  " + this.colorFlower + "  " + sizeFlower.toString();
+    }
 }

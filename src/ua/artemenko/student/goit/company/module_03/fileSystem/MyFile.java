@@ -1,7 +1,9 @@
 package ua.artemenko.student.goit.company.module_03.fileSystem;
 
 
-public class MyFile {
+import ua.artemenko.student.goit.company.module_03.interfacePac.AuxiliaryInterface;
+
+public class MyFile implements AuxiliaryInterface {
 
     protected String nameFile;
 
@@ -17,5 +19,9 @@ public class MyFile {
         this.nameFile = name;
     }
 
-
+    @Override
+    public String toString()
+    {
+        return this.nameFile;
+    }
 }
