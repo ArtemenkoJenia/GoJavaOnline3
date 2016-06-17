@@ -14,10 +14,11 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        AudioFile audioFile = new AudioFile("AudioFile");
-        TextFile textFile = new TextFile("TextFile");
-        ImageFile imageFile = new ImageFile("ImageFile");
-        List<AuxiliaryInterface> collectionFile = new ArrayList<>(Arrays.asList(audioFile,textFile,imageFile));
+        AudioFile audioFile = new AudioFile("AudioFile",25756,".mp3");
+        AudioFile audioFile1 = new AudioFile("AudioFile",55756,".mp3");
+        TextFile textFile = new TextFile("TextFile",235,".txt");
+        ImageFile imageFile = new ImageFile("ImageFile",3675,".png");
+        List<AuxiliaryInterface> collectionFile = new ArrayList<>(Arrays.asList(audioFile1,audioFile,textFile,imageFile));
 
         Rose roseOne = new Rose("Rose","RED", SizeFlower.Large);
         Tulip tulip = new Tulip("Tulip","BLUE",SizeFlower.Small);

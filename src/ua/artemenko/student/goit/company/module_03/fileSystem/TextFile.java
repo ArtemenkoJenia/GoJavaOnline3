@@ -5,8 +5,8 @@ public class TextFile extends MyFile {
 
     private String text;
 
-    public TextFile(String nameTextFile){
-        super(nameTextFile);
+    public TextFile(String nameTextFile,int sizeTextFile,String specificationTextFile){
+        super(nameTextFile,sizeTextFile,specificationTextFile);
     }
 
     public String getText() {

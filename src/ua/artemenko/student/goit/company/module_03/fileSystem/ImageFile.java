@@ -3,8 +3,8 @@ package ua.artemenko.student.goit.company.module_03.fileSystem;
 
 public class ImageFile extends MyFile {
 
-    public ImageFile(String nameImageFile) {
-        super(nameImageFile);
+    public ImageFile(String nameImageFile,int sizeImageFile,String specificationImageFile){
+        super(nameImageFile,sizeImageFile,specificationImageFile);
     }
 
     public void showImage() {

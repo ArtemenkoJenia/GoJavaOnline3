@@ -10,6 +10,7 @@ import java.util.Set;
 public class PrintCollection {
 
     public void printList(List<AuxiliaryInterface> ob){
+
         for (AuxiliaryInterface help:ob) {
             System.out.println(help.toString());
         }

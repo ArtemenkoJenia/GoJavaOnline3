@@ -3,6 +3,8 @@ package ua.artemenko.student.goit.company.module_03.flower;
 
 import ua.artemenko.student.goit.company.module_03.interfacePac.AuxiliaryInterface;
 
+import java.util.Formatter;
+
 public class Flower implements AuxiliaryInterface {
 
 
@@ -43,6 +45,40 @@ public class Flower implements AuxiliaryInterface {
     @Override
     public String toString()
     {
-        return this.nameFlower + "  " + this.colorFlower + "  " + sizeFlower.toString();
+        Formatter form = new Formatter();
+        form.format("|%12s|%12s|%12s|",nameFlower,colorFlower,sizeFlower.toString());
+        String s = form.toString();
+        form.close();
+        return s;
+    }
+
+    @Override
+    public boolean equals(Object ob) {
+        if (this == ob) return true;
+        if (ob == null || getClass() != ob.getClass()) return false;
+
+        Flower flower = (Flower) ob;
+        if((nameFlower != null)&&(flower.nameFlower != null)){
+            return !nameFlower.equals(flower.nameFlower);
+        }else if(((nameFlower == null)&&(flower.nameFlower != null))||
+                ((nameFlower != null)&&(flower.nameFlower == null))) {
+            return false;
+        }
+        if((colorFlower != null)&&(flower.colorFlower != null)){
+            return !colorFlower.equals(flower.colorFlower);
+        }else if(((colorFlower == null)&&(flower.colorFlower != null))||
+                ((colorFlower != null)&&(flower.colorFlower == null))) {
+            return false;
+        }
+        return sizeFlower == flower.sizeFlower;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = nameFlower != null ? nameFlower.hashCode() : 0;
+        result = 31 * result + (colorFlower != null ? colorFlower.hashCode() : 0);
+        result = 31 * result + (sizeFlower != null ? sizeFlower.hashCode() : 0);
+        return result;
     }
 }
