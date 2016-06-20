@@ -1,8 +1,5 @@
 package ua.artemenko.student.goit.company.module_03.fileSystem;
 
-/**
- * Created by Женя on 31.05.2016.
- */
 public class MainFile {
     public static void main(String[] args) {
         Folder folder = new Folder();

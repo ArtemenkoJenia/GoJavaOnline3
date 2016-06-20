@@ -1,25 +1,22 @@
 package ua.artemenko.student.goit.company.module_08;
 
-
-import ua.artemenko.student.goit.company.module_03.interfacePac.AuxiliaryInterface;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class PrintCollection {
 
-    public void printList(List<AuxiliaryInterface> ob){
+    public void printList(List<? extends MyAuxiliaryInterface> ob){
 
-        for (AuxiliaryInterface help:ob) {
+        for (MyAuxiliaryInterface help:ob) {
             System.out.println(help.toString());
         }
         System.out.println();
     }
 
-    public void printMap(Map<String,List<AuxiliaryInterface>> ob){
-        Set<Map.Entry<String,List<AuxiliaryInterface>>> helpSet = ob.entrySet();
-        for (Map.Entry<String,List<AuxiliaryInterface>> help:helpSet) {
+    public void printMap(Map<String,List<? extends MyAuxiliaryInterface>> ob){
+        Set<Map.Entry<String,List<? extends MyAuxiliaryInterface>>> helpSet = ob.entrySet();
+        for (Map.Entry<String,List<? extends MyAuxiliaryInterface>> help:helpSet) {
             System.out.println(help.getKey());
             printList(help.getValue());
         }

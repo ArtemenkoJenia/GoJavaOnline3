@@ -1,16 +1,27 @@
-package ua.artemenko.student.goit.company.module_03.musicalInstruments;
+package ua.artemenko.student.goit.company.module_08.musicalInstruments;
 
+import ua.artemenko.student.goit.company.module_08.MyAuxiliaryInterface;
+import ua.artemenko.student.goit.company.module_08.musicalInstruments.comparatorMusicInstrument.ComparatorInstrumentValue;
+import ua.artemenko.student.goit.company.module_08.musicalInstruments.comparatorMusicInstrument.ComparatorMusic;
 
+import java.util.Comparator;
 import java.util.Formatter;
 
-public class MusicalInstrument{
+public class MusicalInstrument implements MyAuxiliaryInterface {
 
     protected String nameMusicalInstrument;
     protected double valueMusicalInstrument;
 
+    private static int countLetterNameMusicalInstrument = 0;
+    private final int COLUMN_WIDTH_SIZE = 14;
+
+    public static Comparator<MusicalInstrument> compar = new ComparatorMusic().
+            thenComparing(new ComparatorInstrumentValue());
+
     public MusicalInstrument(String nameMusicalInstrument, double valueMusicalInstrument) {
         this.nameMusicalInstrument = nameMusicalInstrument;
         this.valueMusicalInstrument = valueMusicalInstrument;
+        SizeFileComponent(nameMusicalInstrument);
     }
 
     public String getNameMusicalInstrument() {
@@ -35,7 +46,7 @@ public class MusicalInstrument{
     @Override
     public String toString() {
         Formatter form = new Formatter();
-        form.format("|%12s|%12s|", nameMusicalInstrument, valueMusicalInstrument);
+        form.format("|%" + countLetterNameMusicalInstrument + "s|%" + COLUMN_WIDTH_SIZE + "s|", nameMusicalInstrument, valueMusicalInstrument);
         String s = form.toString();
         form.close();
         return s;
@@ -53,13 +64,13 @@ public class MusicalInstrument{
 
         MusicalInstrument myFile = (MusicalInstrument) ob;
 
-        if (Double.compare(myFile.valueMusicalInstrument, valueMusicalInstrument) != 0){
+        if (Double.compare(myFile.valueMusicalInstrument, valueMusicalInstrument) != 0) {
             return false;
         }
-        if((nameMusicalInstrument != null)&&(myFile.nameMusicalInstrument != null)){
+        if ((nameMusicalInstrument != null) && (myFile.nameMusicalInstrument != null)) {
             return !nameMusicalInstrument.equals(myFile.nameMusicalInstrument);
-        }else if(((nameMusicalInstrument == null)&&(myFile.nameMusicalInstrument != null))||
-                ((nameMusicalInstrument != null)&&(myFile.nameMusicalInstrument == null))) {
+        } else if (((nameMusicalInstrument == null) && (myFile.nameMusicalInstrument != null)) ||
+                ((nameMusicalInstrument != null) && (myFile.nameMusicalInstrument == null))) {
             return false;
         }
         return true;
@@ -69,10 +80,14 @@ public class MusicalInstrument{
     @Override
     public int hashCode() {
         int result;
-        long temp;
         result = nameMusicalInstrument != null ? nameMusicalInstrument.hashCode() : 0;
-        temp = Double.doubleToLongBits(valueMusicalInstrument);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (int) valueMusicalInstrument;
         return result;
+    }
+
+    private void SizeFileComponent(String nameMusicalInstrument) {
+
+        countLetterNameMusicalInstrument =
+                countLetterNameMusicalInstrument < nameMusicalInstrument.length() ? nameMusicalInstrument.length() : countLetterNameMusicalInstrument;
     }
 }

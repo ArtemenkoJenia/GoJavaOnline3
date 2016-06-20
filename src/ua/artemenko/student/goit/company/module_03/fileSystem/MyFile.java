@@ -1,12 +1,8 @@
 package ua.artemenko.student.goit.company.module_03.fileSystem;
 
-
-import ua.artemenko.student.goit.company.module_03.interfacePac.AuxiliaryInterface;
-
-import java.util.Comparator;
 import java.util.Formatter;
 
-public class MyFile implements AuxiliaryInterface,Comparator<MyFile>{
+public class MyFile{
 
     protected String nameFile;
     protected int sizeFile;
@@ -52,28 +48,6 @@ public class MyFile implements AuxiliaryInterface,Comparator<MyFile>{
         String s = form.toString();
         form.close();
         return s;
-    }
-
-    @Override
-    public int compare(MyFile ob1, MyFile ob2) {
-        
-        Comparator<MyFile> comp = ((new Comparator<MyFile>() {
-            @Override
-            public int compare(MyFile ob1, MyFile ob2) {
-                return ob1.getName().compareTo(ob2.getName());
-            }
-        }).thenComparing(new Comparator<MyFile>() {
-            @Override
-            public int compare(MyFile ob1, MyFile ob2) {
-                return ob1.getSize() - ob2.getSize();
-            }
-        })).thenComparing(new Comparator<MyFile>(){
-            @Override
-            public int compare(MyFile ob1, MyFile ob2) {
-                return ob1.getSpecification().compareTo(ob2.getSpecification());
-            }
-        });
-        return comp.compare(ob1,ob2);
     }
 
     @Override
