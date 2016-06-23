@@ -62,17 +62,15 @@ public class Main {
                                             new Piano("Piano", 5000.0)));
         SortCollection.insertSortArray(collectionInstrument,MusicalInstrument.compar);
 
-
+        Map<String, List<? extends MyAuxiliaryInterface>> setList = new HashMap<>();
+        setList.put("File", collectionFile);
+        setList.put("Flower", collectionFlower);
+        setList.put("MusicalInstrument", collectionInstrument);
 
         PrintCollection printCollection = new PrintCollection();
         printCollection.printList(collectionFile);
         printCollection.printList(collectionFlower);
         printCollection.printList(collectionInstrument);
-
-        Map<String, List<? extends MyAuxiliaryInterface>> setList = new HashMap<>();
-        setList.put("File", collectionFile);
-        setList.put("Flower", collectionFlower);
-        setList.put("MusicalInstrument", collectionInstrument);
         printCollection.printMap(setList);
 
     }
