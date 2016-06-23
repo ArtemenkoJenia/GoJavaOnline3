@@ -74,5 +74,6 @@ public class Main {
         setList.put("Flower", collectionFlower);
         setList.put("MusicalInstrument", collectionInstrument);
         printCollection.printMap(setList);
+
     }
 }

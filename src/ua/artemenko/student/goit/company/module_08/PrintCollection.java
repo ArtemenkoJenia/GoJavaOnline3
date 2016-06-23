@@ -9,7 +9,7 @@ public class PrintCollection {
     public void printList(List<? extends MyAuxiliaryInterface> ob){
 
         for (MyAuxiliaryInterface help:ob) {
-            System.out.println(help.toString());
+            System.out.println(help);
         }
         System.out.println();
     }
