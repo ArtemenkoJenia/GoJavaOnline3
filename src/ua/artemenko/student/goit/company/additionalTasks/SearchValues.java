@@ -1,7 +1,6 @@
 package ua.artemenko.student.goit.company.additionalTasks;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class SearchValues {
 
@@ -13,33 +12,27 @@ public class SearchValues {
             Arrays.sort(ob);
             for (int i = 0; i < ob.length; i++) {
                 int help = target - ob[i];
-                preSearch(ob, i + 1, ob.length, help,ob[i]);
+                int start = i + 1;
+                int end = ob.length - 1;
+                while (start <= end) {
+                    int mid = (start + end) >>> 1;
+                    int midVal = ob[mid];
+
+                    if (midVal < help) {
+                        start = mid + 1;
+                    } else if (midVal > help) {
+                        end = mid - 1;
+                    } else if (midVal == help) {
+                        search(ob, start, end, help,ob[i]);
+                        break;
+                    }
+                }
             }
         } catch (IllegalArgumentException e) {
             System.out.println("to search the array length should be greater than one");
         }
 
     }
-
-    private static void preSearch(int[] ob, int start, int end, int key,int pair) {
-        int low = start;
-        int high = end - 1;
-
-        while (low <= high) {
-            int mid = (low + high) >>> 1;
-            int midVal = ob[mid];
-
-            if (midVal < key) {
-                low = mid + 1;
-            } else if (midVal > key) {
-                high = mid - 1;
-            } else if (midVal == key) {
-                search(ob, low, high, key,pair);
-                return;
-            }
-        }
-    }
-
     private static void search(int[] ob, int start, int end, int key,int pair) {
         int countCoincides = 0;
         for (int i = start; i <= end; i++) {

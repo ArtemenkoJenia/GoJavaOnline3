@@ -21,24 +21,6 @@ public class MainAdditionalTasks {
         ArrayClass.bubbleSort(ar);
         ArrayClass.showArray(ar);
         SearchValues.findPairs(ar,9);
-//
-//        int[] helpArray1 = arrayClass.array.clone();
-//        ArrayClass.insertSort(helpArray1);
-//        ArrayClass.showArray(helpArray1);
-//
-//        int[] helpArray2 = arrayClass.array.clone();
-//        ArrayClass.selectionSort(helpArray2);
-//        ArrayClass.showArray(helpArray2);
-//
-//        int[] helpArray3 = arrayClass.array.clone();
-//        ArrayClass.quickSort(helpArray3,0,helpArray3.length - 1);
-//        ArrayClass.showArray(helpArray3);
-//
-//        int[] helpArray4 = arrayClass.array.clone();
-//        ArrayClass.veryQuickSort(helpArray4);
-//        ArrayClass.showArray(helpArray4);
-//
-//        System.out.println();
-//        ArrayClass.showArray(arrayClass.array);
+
     }
 }
