@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class ArrayClass {
 
-    int[] array;
+    public int[] array;
 
     public ArrayClass(int size) {
         array = new int[size];
