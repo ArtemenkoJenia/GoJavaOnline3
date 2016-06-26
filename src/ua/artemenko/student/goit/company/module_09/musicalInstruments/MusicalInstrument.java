@@ -1,6 +1,6 @@
 package ua.artemenko.student.goit.company.module_09.musicalInstruments;
 
-import ua.artemenko.student.goit.company.module_09.AbstractAuxiliary;
+import ua.artemenko.student.goit.company.module_09.subsidiary.AbstractAuxiliary;
 import ua.artemenko.student.goit.company.module_09.musicalInstruments.comparatorMusicInstrument.ComparatorInstrumentValue;
 import ua.artemenko.student.goit.company.module_09.musicalInstruments.comparatorMusicInstrument.ComparatorMusic;
 

@@ -9,6 +9,9 @@ import ua.artemenko.student.goit.company.module_09.musicalInstruments.Guiter;
 import ua.artemenko.student.goit.company.module_09.musicalInstruments.MusicalInstrument;
 import ua.artemenko.student.goit.company.module_09.musicalInstruments.Piano;
 import ua.artemenko.student.goit.company.module_09.musicalInstruments.Trumpet;
+import ua.artemenko.student.goit.company.module_09.processData.PrintCollection;
+import ua.artemenko.student.goit.company.module_09.processData.SortCollection;
+import ua.artemenko.student.goit.company.module_09.subsidiary.AbstractAuxiliary;
 
 import java.util.*;
 
@@ -61,30 +64,21 @@ public class Main {
         SortCollection.insertSortArray(collectionInstrument, MusicalInstrument.compar);
 
 
-        Map<String, List<? extends AbstractAuxiliary>> setList = new HashMap<>();
-        setList.put("File", collectionFile);
-        setList.put("Flower", collectionFlower);
-        setList.put("MusicalInstrument", collectionInstrument);
-
-        PrintCollection printCollection = new PrintCollection();
-        printCollection.printList(collectionFile);
-        printCollection.printList(collectionFlower);
-        printCollection.printList(collectionInstrument);
-        printCollection.printMap(setList);
+        PrintCollection.printList(collectionFile);
+        PrintCollection.printList(collectionFlower);
+        PrintCollection.printList(collectionInstrument);
 
         AbstractAuxiliary.encrypt = true;
 
-        printCollection.printList(collectionFile);
-        printCollection.printList(collectionFlower);
-        printCollection.printList(collectionInstrument);
-        printCollection.printMap(setList);
+        PrintCollection.printList(collectionFile);
+        PrintCollection.printList(collectionFlower);
+        PrintCollection.printList(collectionInstrument);
 
         AbstractAuxiliary.encrypt = false;
 
-        printCollection.printList(collectionFile);
-        printCollection.printList(collectionFlower);
-        printCollection.printList(collectionInstrument);
-        printCollection.printMap(setList);
+        PrintCollection.printList(collectionFile);
+        PrintCollection.printList(collectionFlower);
+        PrintCollection.printList(collectionInstrument);
 
     }
 }

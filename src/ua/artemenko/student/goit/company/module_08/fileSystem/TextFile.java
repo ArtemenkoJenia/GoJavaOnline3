@@ -2,7 +2,7 @@ package ua.artemenko.student.goit.company.module_08.fileSystem;
 
 
 
-public class TextFile extends MyFile {
+public class TextFile extends File {
 
     private String text;
 

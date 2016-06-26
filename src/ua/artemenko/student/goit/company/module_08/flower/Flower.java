@@ -1,7 +1,7 @@
 package ua.artemenko.student.goit.company.module_08.flower;
 
 
-import ua.artemenko.student.goit.company.module_08.MyAuxiliaryInterface;
+import ua.artemenko.student.goit.company.module_08.subsidiary.AuxiliaryInterface;
 import ua.artemenko.student.goit.company.module_08.flower.comparator.ComparatorColorFlower;
 import ua.artemenko.student.goit.company.module_08.flower.comparator.ComparatorNameFlower;
 import ua.artemenko.student.goit.company.module_08.flower.comparator.ComparatorSizeFlower;
@@ -9,7 +9,7 @@ import ua.artemenko.student.goit.company.module_08.flower.comparator.ComparatorS
 import java.util.Comparator;
 import java.util.Formatter;
 
-public class Flower implements MyAuxiliaryInterface {
+public class Flower implements AuxiliaryInterface {
 
 
     protected String nameFlower;

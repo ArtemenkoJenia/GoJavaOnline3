@@ -4,23 +4,23 @@ import java.util.ArrayList;
 
 public class Folder {
 
-    private ArrayList<MyFile> listFile;
+    private ArrayList<File> listFile;
 
     public Folder() {
         listFile = new ArrayList<>();
     }
 
-    public void setFile(MyFile file) {
+    public void setFile(File file) {
         this.listFile.add(file);
     }
 
-    public void setAllFile(MyFile... file) {
-        for (MyFile help:file){
+    public void setAllFile(File... file) {
+        for (File help:file){
             setFile(help);
         }
     }
 
-    public void removeFile(MyFile file) {
+    public void removeFile(File file) {
         listFile.remove(file);
     }
 

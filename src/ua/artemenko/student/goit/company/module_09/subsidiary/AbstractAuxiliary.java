@@ -1,7 +1,7 @@
-package ua.artemenko.student.goit.company.module_09;
+package ua.artemenko.student.goit.company.module_09.subsidiary;
 
 
-import ua.artemenko.student.goit.company.module_09.encryptBlock.EncryptString;
+import ua.artemenko.student.goit.company.module_09.processData.EncryptString;
 
 public abstract class AbstractAuxiliary {
     public static boolean encrypt = false;

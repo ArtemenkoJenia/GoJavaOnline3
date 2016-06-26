@@ -1,4 +1,4 @@
-package ua.artemenko.student.goit.company.module_09.encryptBlock;
+package ua.artemenko.student.goit.company.module_09.processData;
 
 public class EncryptString {
 
@@ -33,4 +33,5 @@ public class EncryptString {
         }
         return letter;
     }
+
 }

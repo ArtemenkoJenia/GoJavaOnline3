@@ -2,13 +2,16 @@ package ua.artemenko.student.goit.company.module_08;
 
 import ua.artemenko.student.goit.company.module_08.fileSystem.AudioFile;
 import ua.artemenko.student.goit.company.module_08.fileSystem.ImageFile;
-import ua.artemenko.student.goit.company.module_08.fileSystem.MyFile;
+import ua.artemenko.student.goit.company.module_08.fileSystem.File;
 import ua.artemenko.student.goit.company.module_08.fileSystem.TextFile;
 import ua.artemenko.student.goit.company.module_08.flower.*;
 import ua.artemenko.student.goit.company.module_08.musicalInstruments.Guiter;
 import ua.artemenko.student.goit.company.module_08.musicalInstruments.MusicalInstrument;
 import ua.artemenko.student.goit.company.module_08.musicalInstruments.Piano;
 import ua.artemenko.student.goit.company.module_08.musicalInstruments.Trumpet;
+import ua.artemenko.student.goit.company.module_08.processData.PrintCollection;
+import ua.artemenko.student.goit.company.module_08.processData.SortCollection;
+import ua.artemenko.student.goit.company.module_08.subsidiary.AuxiliaryInterface;
 
 import java.util.*;
 
@@ -16,7 +19,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<MyFile> collectionFile =
+        List<File> collectionFile =
                 new ArrayList<>(Arrays.asList(new AudioFile("AudioFile","Metallica - Ride The Lightning", 5756, ".mp3"),
                                             new AudioFile("AudioFile","Ultimate Oceans - Watching You...", 55756, ".aac"),
                                             new AudioFile("AudioFile","Ultimate Oceans - Galaxies", 5556, ".ffr"),
@@ -35,7 +38,7 @@ public class Main {
                                             new ImageFile("ImageFile","Image", 10675, ".ai"),
                                             new ImageFile("ImageFile","Picture", 3675, ".png"),
                                             new ImageFile("ImageFile","Picture", 3675, ".png")));
-        SortCollection.insertSortArray(collectionFile,MyFile.compar);
+        SortCollection.insertSortArray(collectionFile, File.compar);
 
 
         List<Flower> collectionFlower =
@@ -62,16 +65,15 @@ public class Main {
                                             new Piano("Piano", 5000.0)));
         SortCollection.insertSortArray(collectionInstrument,MusicalInstrument.compar);
 
-        Map<String, List<? extends MyAuxiliaryInterface>> setList = new HashMap<>();
+        Map<String, List<? extends AuxiliaryInterface>> setList = new HashMap<>();
         setList.put("File", collectionFile);
         setList.put("Flower", collectionFlower);
         setList.put("MusicalInstrument", collectionInstrument);
 
-        PrintCollection printCollection = new PrintCollection();
-        printCollection.printList(collectionFile);
-        printCollection.printList(collectionFlower);
-        printCollection.printList(collectionInstrument);
-        printCollection.printMap(setList);
+        PrintCollection.printList(collectionFile);
+        PrintCollection.printList(collectionFlower);
+        PrintCollection.printList(collectionInstrument);
+        PrintCollection.printMap(setList);
 
     }
 }

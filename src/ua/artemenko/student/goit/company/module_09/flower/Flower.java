@@ -1,7 +1,7 @@
 package ua.artemenko.student.goit.company.module_09.flower;
 
 
-import ua.artemenko.student.goit.company.module_09.AbstractAuxiliary;
+import ua.artemenko.student.goit.company.module_09.subsidiary.AbstractAuxiliary;
 import ua.artemenko.student.goit.company.module_09.flower.comparator.ComparatorColorFlower;
 import ua.artemenko.student.goit.company.module_09.flower.comparator.ComparatorNameFlower;
 import ua.artemenko.student.goit.company.module_09.flower.comparator.ComparatorSizeFlower;

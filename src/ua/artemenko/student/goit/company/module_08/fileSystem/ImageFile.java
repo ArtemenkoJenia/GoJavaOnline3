@@ -1,7 +1,7 @@
 package ua.artemenko.student.goit.company.module_08.fileSystem;
 
 
-public class ImageFile extends MyFile {
+public class ImageFile extends File {
 
     public ImageFile(String nameClass,String nameImageFile,int sizeImageFile,String specificationImageFile){
         super(nameClass,nameImageFile,sizeImageFile,specificationImageFile);

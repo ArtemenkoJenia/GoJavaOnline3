@@ -1,6 +1,6 @@
 package ua.artemenko.student.goit.company.module_08.fileSystem;
 
-import ua.artemenko.student.goit.company.module_08.MyAuxiliaryInterface;
+import ua.artemenko.student.goit.company.module_08.subsidiary.AuxiliaryInterface;
 import ua.artemenko.student.goit.company.module_08.fileSystem.comparator.ComparatorClassName;
 import ua.artemenko.student.goit.company.module_08.fileSystem.comparator.ComparatorFileName;
 import ua.artemenko.student.goit.company.module_08.fileSystem.comparator.ComparatorFileSize;
@@ -8,7 +8,7 @@ import ua.artemenko.student.goit.company.module_08.fileSystem.comparator.Compara
 
 import java.util.*;
 
-public class MyFile implements MyAuxiliaryInterface {
+public class File implements AuxiliaryInterface {
 
     protected String nameClass;
     protected String nameFile;
@@ -20,11 +20,11 @@ public class MyFile implements MyAuxiliaryInterface {
     private static int countSpecification = 0;
     private final int COLUMN_WIDTH_SIZE = 14;
 
-    public static Comparator<MyFile> compar = new ComparatorClassName().thenComparing(new ComparatorFileName()).
+    public static Comparator<File> compar = new ComparatorClassName().thenComparing(new ComparatorFileName()).
                                                                 thenComparing(new ComparatorFileSize()).
                                                                 thenComparing(new ComparatorFileSpecification());
 
-    public MyFile(String nameClass, String nameFile, int sizeFile, String specificationFile) {
+    public File(String nameClass, String nameFile, int sizeFile, String specificationFile) {
         this.nameClass = nameClass;
         this.nameFile = nameFile;
         this.sizeFile = sizeFile;
@@ -83,7 +83,7 @@ public class MyFile implements MyAuxiliaryInterface {
             return false;
         }
 
-        MyFile myFile = (MyFile) ob;
+        File myFile = (File) ob;
 
         if (sizeFile != myFile.sizeFile) {
             return false;

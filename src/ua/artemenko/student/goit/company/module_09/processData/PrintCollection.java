@@ -1,4 +1,6 @@
-package ua.artemenko.student.goit.company.module_09;
+package ua.artemenko.student.goit.company.module_09.processData;
+
+import ua.artemenko.student.goit.company.module_09.subsidiary.AbstractAuxiliary;
 
 import java.util.List;
 import java.util.Map;
@@ -6,7 +8,7 @@ import java.util.Set;
 
 public class PrintCollection {
 
-    public void printList(List<? extends AbstractAuxiliary> ob){
+    public static void printList(List<? extends AbstractAuxiliary> ob){
 
         for (AbstractAuxiliary help:ob) {
             System.out.println(help);
@@ -14,7 +16,7 @@ public class PrintCollection {
         System.out.println();
     }
 
-    public void printMap(Map<String,List<? extends AbstractAuxiliary>> ob){
+    public static void printMap(Map<String,List<? extends AbstractAuxiliary>> ob){
         Set<Map.Entry<String,List<? extends AbstractAuxiliary>>> helpSet = ob.entrySet();
         for (Map.Entry<String,List<? extends AbstractAuxiliary>> help:helpSet) {
             System.out.println(help.getKey());

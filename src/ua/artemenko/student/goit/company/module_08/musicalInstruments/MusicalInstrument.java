@@ -1,13 +1,13 @@
 package ua.artemenko.student.goit.company.module_08.musicalInstruments;
 
-import ua.artemenko.student.goit.company.module_08.MyAuxiliaryInterface;
+import ua.artemenko.student.goit.company.module_08.subsidiary.AuxiliaryInterface;
 import ua.artemenko.student.goit.company.module_08.musicalInstruments.comparatorMusicInstrument.ComparatorInstrumentValue;
 import ua.artemenko.student.goit.company.module_08.musicalInstruments.comparatorMusicInstrument.ComparatorMusic;
 
 import java.util.Comparator;
 import java.util.Formatter;
 
-public class MusicalInstrument implements MyAuxiliaryInterface {
+public class MusicalInstrument implements AuxiliaryInterface {
 
     protected String nameMusicalInstrument;
     protected double valueMusicalInstrument;

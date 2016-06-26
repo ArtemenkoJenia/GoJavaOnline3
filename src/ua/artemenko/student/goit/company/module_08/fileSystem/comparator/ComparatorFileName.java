@@ -1,13 +1,13 @@
 package ua.artemenko.student.goit.company.module_08.fileSystem.comparator;
 
-import ua.artemenko.student.goit.company.module_08.fileSystem.MyFile;
+import ua.artemenko.student.goit.company.module_08.fileSystem.File;
 
 import java.util.Comparator;
 
-public class ComparatorFileName implements Comparator<MyFile> {
+public class ComparatorFileName implements Comparator<File> {
 
     @Override
-    public int compare(MyFile ob1, MyFile ob2) {
+    public int compare(File ob1, File ob2) {
         return ob1.getName().compareTo(ob2.getName());
     }
 }

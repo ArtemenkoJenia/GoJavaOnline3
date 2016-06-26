@@ -1,6 +1,6 @@
 package ua.artemenko.student.goit.company.module_09.fileSystem;
 
-import ua.artemenko.student.goit.company.module_09.AbstractAuxiliary;
+import ua.artemenko.student.goit.company.module_09.subsidiary.AbstractAuxiliary;
 import ua.artemenko.student.goit.company.module_09.fileSystem.comparator.ComparatorClassName;
 import ua.artemenko.student.goit.company.module_09.fileSystem.comparator.ComparatorFileName;
 import ua.artemenko.student.goit.company.module_09.fileSystem.comparator.ComparatorFileSize;
@@ -20,6 +20,7 @@ public class MyFile extends AbstractAuxiliary {
     private static int countLetterNameFile = 0;
     private static int countSpecification = 0;
     private final int COLUMN_WIDTH_SIZE = 14;
+
 
     public static Comparator<MyFile> compar = new ComparatorClassName().thenComparing(new ComparatorFileName()).
             thenComparing(new ComparatorFileSize()).
