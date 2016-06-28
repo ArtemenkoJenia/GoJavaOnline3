@@ -9,6 +9,7 @@ public class EncryptedTextFiles {
 
     private File file;
     private ArrayList<String> text = new ArrayList<>();
+    private BufferedReader textInput = new BufferedReader(new InputStreamReader(System.in));
 
     public EncryptedTextFiles(String path) {
         try {
@@ -41,7 +42,6 @@ public class EncryptedTextFiles {
     private ArrayList<String> inputText(){
         ArrayList<String> result = new ArrayList<>();
         try{
-            BufferedReader textInput = new BufferedReader(new InputStreamReader(System.in));
             System.out.println("enter a line of text");
             System.out.println("enter <<exit>> for finish");
             while (true) {
@@ -56,6 +56,13 @@ public class EncryptedTextFiles {
         }
 
         return result;
+    }
+    public void closeStream(){
+        try {
+            textInput.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /*
