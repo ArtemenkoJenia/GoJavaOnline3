@@ -7,7 +7,7 @@ public abstract class AbstractAuxiliary {
     public static boolean encrypt = false;
     protected boolean encrypted = false;
 
-    protected StringBuffer objectToString;
+    protected String objectToString;
     protected abstract void objectToStringBuilder();
 
     @Override
@@ -16,11 +16,11 @@ public abstract class AbstractAuxiliary {
             objectToStringBuilder();
         }
         if ((AbstractAuxiliary.encrypt) && (!encrypted)) {
-            EncryptString.encryptString(objectToString,AbstractAuxiliary.encrypt);
+            objectToString = EncryptString.encryptString(objectToString,AbstractAuxiliary.encrypt);
             encrypted = true;
         }
         if ((!AbstractAuxiliary.encrypt) && (encrypted)) {
-            EncryptString.encryptString(objectToString,AbstractAuxiliary.encrypt);
+            objectToString = EncryptString.encryptString(objectToString,AbstractAuxiliary.encrypt);
             encrypted = false;
         }
 

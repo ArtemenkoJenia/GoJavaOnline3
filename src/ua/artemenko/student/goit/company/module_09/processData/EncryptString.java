@@ -11,17 +11,16 @@ public class EncryptString {
     static final int COUNT_LETTERS = 26;
 
 
-    public static void encryptString(StringBuffer str,boolean flag) {
-        for (int i = 0; i < str.length(); i++) {
-            char help = 0;
+    public static String encryptString(String str,boolean flag) {
+        char[] ch = str.toCharArray();
+        for (int i = 0; i < ch.length; i++) {
             if(flag){
-                help = encryptLetter(str.charAt(i),ENCRYPTION_KEY);
-                str.setCharAt(i,help);
+                ch[i] = encryptLetter(ch[i],ENCRYPTION_KEY);
             }else{
-                help = encryptLetter(str.charAt(i),DECRYPTION_KEY);
-                str.setCharAt(i,help);
+                ch[i] = encryptLetter(str.charAt(i),DECRYPTION_KEY);
             }
         }
+        return str = new String(ch);
     }
 
     private static char encryptLetter(char letter,int crypt) {

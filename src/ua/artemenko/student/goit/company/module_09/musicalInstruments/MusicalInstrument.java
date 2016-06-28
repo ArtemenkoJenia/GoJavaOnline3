@@ -46,7 +46,7 @@ public class MusicalInstrument extends AbstractAuxiliary {
     protected void objectToStringBuilder() {
         Formatter form = new Formatter();
         form.format("|%" + countLetterNameMusicalInstrument + "s|%" + COLUMN_WIDTH_SIZE + "s|", nameMusicalInstrument, valueMusicalInstrument);
-        objectToString = new StringBuffer(form.toString());
+        objectToString = form.toString();
         form.close();
     }
 

@@ -74,7 +74,7 @@ public class MyFile extends AbstractAuxiliary {
                         COLUMN_WIDTH_SIZE + "sKB|%" +
                         countSpecification + "s|",
                 nameClass, nameFile, sizeFile, specificationFile);
-        objectToString = new StringBuffer(form.toString());
+        objectToString = form.toString();
         form.close();
     }
 

@@ -62,7 +62,7 @@ public class Flower extends AbstractAuxiliary {
         Formatter form = new Formatter();
         form.format("|%" + countLetterNameFlower + "s|%" + countLetterColorFlower + "s|%" + countLetterSizeFlower + "s|",
                 nameFlower,colorFlower,sizeFlower.toString());
-        objectToString = new StringBuffer(form.toString());
+        objectToString = form.toString();
         form.close();
 
     }
