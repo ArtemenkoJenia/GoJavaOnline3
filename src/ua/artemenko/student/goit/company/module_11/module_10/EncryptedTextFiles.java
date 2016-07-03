@@ -32,8 +32,14 @@ public class EncryptedTextFiles {
     /*
     // add text in the file
     */
-    public void addText(boolean flagRewrite){
-        fileEditing(inputText(),flagRewrite);
+    public void addText(String input,boolean flagRewrite){
+        if(input == null){
+            fileEditing(inputText(),flagRewrite);
+        }else{
+            text.add(input);
+            fileEditing(text,flagRewrite);
+        }
+
     }
 
     /*
@@ -73,8 +79,6 @@ public class EncryptedTextFiles {
         textEdit = encryptString(textEdit,true);
         if (replaceText) {
             text = textEdit;
-        } else {
-            text.addAll(textEdit);
         }
         writeInFile();
     }
